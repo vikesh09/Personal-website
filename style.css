@@ -1,0 +1,200 @@
+/*  Live Animated Warm Background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background: linear-gradient(120deg,
+      rgba(169, 25, 209, 0.9),
+      rgba(229, 167, 181, 0.9),
+      rgba(128, 79, 196, 0.9),
+      rgba(141, 69, 223, 0.9)
+    );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease-in-out infinite;
+  transition: background 0.4s ease;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/*  Dark Mode Background */
+@media (prefers-color-scheme: dark) {
+  body::before {
+    background: linear-gradient(120deg,
+      rgba(30, 30, 30, 0.95),
+      rgba(50, 50, 80, 0.85),
+      rgba(90, 20, 150, 0.8),
+      rgba(10, 10, 10, 0.9)
+    );
+  }
+}
+
+/*  Networking Thread Background (behind everything) */
+#network-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: +2; /* stays behind gradient */
+  pointer-events: none;
+  background: transparent;
+}
+
+/*  Containers & Sections */
+.container {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  
+  transition: background 0.3s ease;
+}
+.header {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  background-color: rgba(215, 191, 184, 0);
+}
+
+/*  Dark Mode for Containers */
+@media (prefers-color-scheme: dark) {
+  .container, .header, .body1, .body2, .footer {
+    
+    color: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  }
+}
+
+/*  Body Sections */
+.body1, .body2 {
+  height: auto;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+/*  Footer */
+.footer {
+  height: auto;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  line-height: 10px;
+  font-size: 18px;
+  padding: 10px;
+  background: rgba(27, 26, 26, 0.6);
+  color: white;
+}
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: rgba(57, 57, 57, 0.707);
+  }
+}
+
+/*  Navigation */
+.nav {
+  text-align: right;
+  height: 100px;
+  margin-right: 2%;
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 100px;
+}
+@media (prefers-color-scheme: dark) {
+  .nav { color: #ff8080; }
+}
+
+/*  Headings & Tables */
+#h1 {
+  margin: 10px 0;
+  color: darkred;
+  padding: 5px 10px;
+  border-left: 4px solid darkred;
+}
+@media (prefers-color-scheme: dark) {
+  #h1 {
+    color: #ff4d4d;
+    border-left-color: #ff4d4d;
+  }
+}
+
+#table, #table2 {
+  border: 2px solid black;
+  text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+}
+#table td, #table2 td {
+  padding: 8px;
+  border: 1px solid #333;
+}
+@media (prefers-color-scheme: dark) {
+  #table, #table2 {
+    border-color: #888;
+    color: white;
+  }
+  #table td, #table2 td {
+    border-color: #555;
+  }
+}
+
+/*  Span Styling */
+#span1 {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  height: 100px;
+  margin-left: 20%;
+  position: absolute;
+  top: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(23, 224, 20);
+}
+@media (prefers-color-scheme: dark) {
+  #span1 { color: #00ff88; }
+}
+#span2, #span3, #span4, #span5, #span7 {
+  position: absolute;
+  margin-left: 20%;
+  font-weight: 800;
+  font-family: 'Times New Roman', Times, serif;
+  color: inherit;
+}
+#span2 { margin-top: 80px; }
+#span3 { margin-top: 105px; }
+#span4 { margin-top: 125px; }
+#span5 { margin-top: 145px; }
+#span7 { margin-top: 165px; }
+#span6 {
+  position: absolute;
+  right: 10%;
+  top: 50px;
+}
+#h3{
+    color: red;
+    margin-top:8.0% ;
+}
+.header1{
+  color: white;
+  height:50px;
+  display: inline-block;
+}
+#home{
+  color: #ff4d4d;
+  font-weight: 500;
+  margin-left: 960px;
+}
+#home1{
+  color: #ff4d4d;
+  font-weight: 500;
+  margin-inline: 70px;
+}
