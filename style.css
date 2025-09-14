@@ -47,18 +47,18 @@ body::before {
 /*  Containers & Sections */
 .container {
   width: 100%;
-  height: 200px;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
+  margin-bottom: 2%;
   
   transition: background 0.3s ease;
 }
 .header {
   width: 100%;
-  height: 200px;
+  height: auto;
   position: relative;
-  border-radius: 10px;
+  border-radius: 1%;
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
   background-color: rgba(215, 191, 184, 0);
 }
@@ -101,7 +101,7 @@ body::before {
 /*  Navigation */
 .nav {
   text-align: right;
-  height: 100px;
+  height: auto;
   margin-right: 2%;
   color: red;
   font-weight: bold;
@@ -197,4 +197,55 @@ body::before {
   color: #ff4d4d;
   font-weight: 500;
   margin-inline: 70px;
+}
+/* --- Responsive Fix ONLY for small screens --- */
+@media (max-width: 1024px) {
+  .container {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+  .nav {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0.5rem 0;
+    line-height: normal;
+  }
+  #span1 {
+    font-size: 2rem;
+    margin-left: 0;
+    text-align: center;
+    position: static;
+  }
+  #span2, #span3, #span4, #span5, #span7 {
+    position: static;
+    display: block;
+    margin: 0.3rem 0;
+    text-align: center;
+  }
+  #span6 {
+    position: static;
+    float: none;
+    display: block;
+    margin: 0.5rem auto;
+    text-align: center;
+  }
+  #table td, #table2 td {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #h1 {
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+  .footer {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  .nav {
+    font-size: 0.9rem;
+  }
 }
